@@ -31,6 +31,10 @@ public class DERWriter {
         writeConstructed(ASN1Identifier.SEQUENCE, content);
     }
 
+    public void writeSet(DERSerializable content) throws ASN1Exception {
+        writeConstructed(ASN1Identifier.SET, content);
+    }
+
     void writeNode(ASN1Identifier identifier, boolean constructed, byte[] content) throws ASN1Exception {
         writeIdentifier(identifier, constructed);
         writeLength(content.length);
